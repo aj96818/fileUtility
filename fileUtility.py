@@ -54,8 +54,8 @@ def delete_empty_dirs(destination_dir):
 
 
 if __name__ == "__main__":
-    source_directory = "/Users/alanjackson/AJ SSD COPY"
-    destination_directory = "/Users/alanjackson/Sorted Files"
+    source_directory = "/Volumes/AJ SSD"
+    destination_directory = "/Volumes/WD 5TB Mac/AJ SSD 500GB_SortedFiles"
 
     organize_files(source_directory, destination_directory)
     delete_empty_dirs(destination_directory)
@@ -74,7 +74,7 @@ if __name__ == "__main__":
     if not os.path.exists(new_destination_dir):
         try:
             # Rename the directory
-            parent_dir = "/Users/alanjackson"
+            parent_dir = "/Volumes"
             all_items = os.listdir(parent_dir)
             pattern = r"Sorted Files*"
             matching_str = None
