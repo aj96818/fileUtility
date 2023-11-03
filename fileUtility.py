@@ -54,8 +54,8 @@ def delete_empty_dirs(destination_dir):
 
 
 if __name__ == "__main__":
-    source_directory = "/Volumes/AJ SSD"
-    destination_directory = "/Volumes/WD 5TB Mac/AJ SSD 500GB_SortedFiles"
+    source_directory = "/Volumes/5TB ExFAT"
+    destination_directory = "/Volumes/WD 5TB Mac/5TB ExFAT_SortedFiles"
 
     organize_files(source_directory, destination_directory)
     delete_empty_dirs(destination_directory)
@@ -71,21 +71,21 @@ if __name__ == "__main__":
     new_destination_dir = os.path.join(parent_directory, new_destination_dir_name)
 
     # Check if the new directory name already exists
-    if not os.path.exists(new_destination_dir):
-        try:
-            # Rename the directory
-            parent_dir = "/Volumes"
-            all_items = os.listdir(parent_dir)
-            pattern = r"Sorted Files*"
-            matching_str = None
-            for item in all_items:
-                if re.match(pattern, item):
-                    matching_str = item
-                    break
-            old_dest_dir_name = os.path.join(parent_dir, matching_str)
-            os.rename(old_dest_dir_name, new_destination_dir)
-            print(f"Sucessfully renamed: {old_dest_dir_name} to {new_destination_dir}")
-        except OSError as e:
-            print(f"Error renaming directory: {e}")
-    else:
-        print(f"Error. Cannot rename directory. The directory '{new_destination_dir}' already exists.")
+    # if not os.path.exists(new_destination_dir):
+    #     try:
+    #         # Rename the directory
+    #         parent_dir = "/Volumes"
+    #         all_items = os.listdir(parent_dir)
+    #         pattern = r"Sorted Files*"
+    #         matching_str = None
+    #         for item in all_items:
+    #             if re.match(pattern, item):
+    #                 matching_str = item
+    #                 break
+    #         old_dest_dir_name = os.path.join(parent_dir, matching_str)
+    #         os.rename(old_dest_dir_name, new_destination_dir)
+    #         print(f"Sucessfully renamed: {old_dest_dir_name} to {new_destination_dir}")
+    #     except OSError as e:
+    #         print(f"Error renaming directory: {e}")
+    # else:
+    #     print(f"Error. Cannot rename directory. The directory '{new_destination_dir}' already exists.")
